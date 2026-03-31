@@ -16,7 +16,7 @@ export default function ContactForm() {
     <section id="contato" className="py-24 bg-aviation-blue relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
-      
+
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="glass-dark rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
           <div className="text-center mb-10">
@@ -29,7 +29,7 @@ export default function ContactForm() {
           </div>
 
           {status === 'success' ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12"
@@ -44,19 +44,19 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-sky-200">Nome do Comandante</label>
-                  <input 
+                  <label className="text-sm font-medium text-sky-200">Nome completo</label>
+                  <input
                     required
-                    type="text" 
+                    type="text"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                     placeholder="Seu nome"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-sky-200">Nome da Agência</label>
-                  <input 
+                  <input
                     required
-                    type="text" 
+                    type="text"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                     placeholder="Sua agência"
                   />
@@ -65,24 +65,24 @@ export default function ContactForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-sky-200">E-mail Corporativo</label>
-                  <input 
+                  <input
                     required
-                    type="email" 
+                    type="email"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                     placeholder="contato@agencia.com"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-sky-200">Telefone / WhatsApp</label>
-                  <input 
+                  <input
                     required
-                    type="tel" 
+                    type="tel"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                     placeholder="(00) 00000-0000"
                   />
                 </div>
               </div>
-              
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -93,7 +93,7 @@ export default function ContactForm() {
                   <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 ) : (
                   <>
-                    Autorizar Decolagem <Send size={18} />
+                    Entrar em contato<Send size={18} />
                   </>
                 )}
               </motion.button>
