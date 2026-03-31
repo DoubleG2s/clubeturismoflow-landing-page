@@ -6,14 +6,14 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50 to-white pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
+        <motion.div
           animate={{ x: [0, 100, 0], y: [0, -20, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/4 left-10 text-sky-100/50"
         >
           <Cloud size={120} />
         </motion.div>
-        <motion.div 
+        <motion.div
           animate={{ x: [0, -80, 0], y: [0, 30, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/3 right-20 text-sky-100/50"
@@ -22,12 +22,12 @@ export default function Hero() {
         </motion.div>
         {/* Flight path line */}
         <svg className="absolute w-full h-full" style={{ zIndex: 0 }}>
-          <path 
-            d="M -100 500 Q 400 100 1200 300" 
-            fill="transparent" 
-            stroke="rgba(14, 165, 233, 0.1)" 
-            strokeWidth="2" 
-            strokeDasharray="10 10" 
+          <path
+            d="M -100 500 Q 400 100 1200 300"
+            fill="transparent"
+            stroke="rgba(14, 165, 233, 0.1)"
+            strokeWidth="2"
+            strokeDasharray="10 10"
           />
         </svg>
       </div>
@@ -47,7 +47,7 @@ export default function Hero() {
           <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
             Centralize reservas, hotéis, voos e créditos em uma plataforma ágil e segura. A jornada completa do seu cliente, do check-in ao check-out, sob seu controle.
           </p>
-          
+
           <motion.button
             whileHover={{ scale: 1.05, y: -5 }}
             whileTap={{ scale: 0.95 }}
@@ -55,7 +55,7 @@ export default function Hero() {
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative flex items-center gap-2">
-              Solicitar Demonstração
+              Fale conosco
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

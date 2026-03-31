@@ -3,30 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import PainPoints from './components/PainPoints';
-import MultiTenant from './components/MultiTenant';
-import Features from './components/Features';
-import SocialProof from './components/SocialProof';
-import FAQ from './components/FAQ';
-import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 export default function App() {
   return (
-    <div className="min-h-screen font-sans selection:bg-sky-500/30">
-      <Navbar />
-      <main>
-        <Hero />
-        <PainPoints />
-        <MultiTenant />
-        <Features />
-        <SocialProof />
-        <FAQ />
-        <ContactForm />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col font-sans selection:bg-sky-500/30">
+        <Navbar />
+        
+        {/* Camada das páginas roteáveis ocupa o resto do espaço caso vazio */}
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/termos" element={<Terms />} />
+            <Route path="/privacidade" element={<Privacy />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
+

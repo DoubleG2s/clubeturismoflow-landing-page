@@ -1,4 +1,5 @@
 import { PlaneTakeoff } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -12,8 +13,8 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Clube Turismo Flow. Todos os direitos reservados.
         </div>
         <div className="flex gap-6 text-sm">
-          <a href="#" className="hover:text-sky-400 transition-colors">Termos de Uso</a>
-          <a href="#" className="hover:text-sky-400 transition-colors">Privacidade</a>
+          <Link to="/termos" className="hover:text-sky-400 transition-colors">Termos de Uso</Link>
+          <Link to="/privacidade" className="hover:text-sky-400 transition-colors">Privacidade</Link>
         </div>
       </div>
     </footer>
