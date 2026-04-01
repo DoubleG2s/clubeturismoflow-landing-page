@@ -53,8 +53,8 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="group relative inline-flex items-center justify-center gap-3 bg-aviation-blue text-white px-8 py-4 rounded-full text-lg font-medium overflow-hidden shadow-[0_10px_40px_-10px_rgba(10,37,64,0.5)]"
           >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <span className="relative flex items-center gap-2">
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-sky-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"></span>
+            <span className="relative flex items-center gap-2 cursor-pointer">
               Fale conosco
               <motion.div
                 animate={{ x: [0, 5, 0] }}

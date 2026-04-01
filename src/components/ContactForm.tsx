@@ -5,11 +5,32 @@ import { Send, CheckCircle } from 'lucide-react';
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate API call
-    setTimeout(() => setStatus('success'), 1500);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        console.error('Falha ao enviar e-mail');
+        setStatus('idle'); // Retornar ao estado inicial em caso de erro
+      }
+    } catch (error) {
+      console.error('Erro na requisição:', error);
+      setStatus('idle');
+    }
   };
 
   return (
@@ -44,8 +65,10 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-sky-200">Nome completo</label>
+                  <label className="text-sm font-medium text-sky-200" htmlFor="nome">Nome completo</label>
                   <input
+                    id="nome"
+                    name="nome"
                     required
                     type="text"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
@@ -53,8 +76,10 @@ export default function ContactForm() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-sky-200">Nome da Agência</label>
+                  <label className="text-sm font-medium text-sky-200" htmlFor="agencia">Nome da Agência</label>
                   <input
+                    id="agencia"
+                    name="agencia"
                     required
                     type="text"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
@@ -64,8 +89,10 @@ export default function ContactForm() {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-sky-200">E-mail Corporativo</label>
+                  <label className="text-sm font-medium text-sky-200" htmlFor="email">E-mail Corporativo</label>
                   <input
+                    id="email"
+                    name="email"
                     required
                     type="email"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
@@ -73,14 +100,26 @@ export default function ContactForm() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-sky-200">Telefone / WhatsApp</label>
+                  <label className="text-sm font-medium text-sky-200" htmlFor="telefone">Telefone / WhatsApp</label>
                   <input
+                    id="telefone"
+                    name="telefone"
                     required
                     type="tel"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                     placeholder="(00) 00000-0000"
                   />
                 </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-sky-200" htmlFor="mensagem">Como podemos ajudar sua agência?</label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows={4}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
+                  placeholder="Escreva sua mensagem aqui..."
+                ></textarea>
               </div>
 
               <motion.button
@@ -93,7 +132,7 @@ export default function ContactForm() {
                   <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 ) : (
                   <>
-                    Entrar em contato<Send size={18} />
+                    Decolar Plano<Send size={18} />
                   </>
                 )}
               </motion.button>
