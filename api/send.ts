@@ -21,12 +21,12 @@ export default async function handler(req: any, res: any) {
     const { data, error } = await resend.emails.send({
       from: 'Clube Turismo Flow <onboarding@resend.dev>', // Configure seu domínio no Resend depois
       to: ['guilherme.jard5@gmail.com'], // Email que receberá os contatos
-      subject: `✈️ Nova Solicitação de Demonstração - ${agencia}`,
+      subject: `✈️ Nova Solicitação - ${agencia}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 10px; background-color: #f8fafc;">
           <div style="text-align: center; padding-bottom: 20px; border-bottom: 2px solid #0ea5e9;">
             <h2 style="color: #0f172a; margin: 0; font-size: 22px;">🛫 Novo Contato Recebido</h2>
-            <p style="color: #0284c7; margin: 5px 0 0; font-size: 14px;">Clube Turismo Flow - Landing Page</p>
+            <p style="color: #0284c7; margin: 5px 0 0; font-size: 14px;">Clube Turismo Flow - SaaS</p>
           </div>
           
           <div style="padding: 20px 0;">
