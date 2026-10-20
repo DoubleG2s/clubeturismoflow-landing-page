@@ -10,7 +10,7 @@ export default function Logo({ variant = 'color', className = '' }: LogoProps) {
   return (
     <span className={`flex items-center gap-2 font-display font-bold text-xl ${className}`}>
       {isLight ? (
-        <img src="/flowtur-icon.png" alt="" className="w-8 h-8 rounded-lg" />
+        <img src="/icon-flowtur.png" alt="" className="w-8 h-8 rounded-lg" />
       ) : (
         <img src="/flowtur-semfundo.png" alt="" className="h-8 w-auto" />
       )}
