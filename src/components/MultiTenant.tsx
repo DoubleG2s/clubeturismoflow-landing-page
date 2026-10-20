@@ -1,13 +1,20 @@
 import { motion } from 'motion/react';
-import { ShieldCheck, Building2, Lock } from 'lucide-react';
+import { ShieldCheck, Building2, Lock, KeyRound, UserCog, Bot } from 'lucide-react';
+
+const items = [
+  { icon: Building2, text: 'Cada agência enxerga apenas os próprios dados' },
+  { icon: ShieldCheck, text: 'Isolamento garantido no banco de dados com Row Level Security' },
+  { icon: KeyRound, text: 'Chaves de pagamento e de IA ficam somente no servidor' },
+  { icon: UserCog, text: 'Perfis de acesso para administradores e agentes de viagem' },
+  { icon: Bot, text: 'A IA não exclui dados e não salva nada sem a ação do usuário' },
+];
 
 export default function MultiTenant() {
   return (
-    <section id="hangar" className="py-24 bg-aviation-blue text-white relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute w-[800px] h-[800px] bg-sky-400 rounded-full blur-3xl -top-96 -right-96"></div>
-        <div className="absolute w-[600px] h-[600px] bg-blue-600 rounded-full blur-3xl -bottom-48 -left-48"></div>
+    <section id="seguranca" className="py-24 bg-brand-navy text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute w-[800px] h-[800px] bg-brand-sky rounded-full blur-3xl -top-96 -right-96"></div>
+        <div className="absolute w-[600px] h-[600px] bg-brand-blue rounded-full blur-3xl -bottom-48 -left-48"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -17,35 +24,34 @@ export default function MultiTenant() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-sky-400 font-semibold tracking-wider uppercase text-sm mb-4 block">
-              Arquitetura Exclusiva
+            <span className="text-brand-sky font-semibold tracking-wider uppercase text-sm mb-4 block">
+              Segurança e multiempresa
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              Seu próprio <span className="text-sky-400">Hangar Privado</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Os dados da sua agência, <span className="text-brand-sky">só da sua agência</span>
             </h2>
             <p className="text-lg text-slate-300 mb-8">
-              Desenvolvido para escalar com múltiplos escritórios ou franquias. Nossa arquitetura Multi-Tenant reativa garante que os dados da sua agência permaneçam 100% isolados, protegidos e íntegros.
+              O Flowtur é multi-tenant: várias agências usam a mesma plataforma, mas cada empresa opera em um ambiente isolado. A separação é feita no aplicativo e garantida no banco de dados.
             </p>
-            <ul className="space-y-6">
-              {[
-                { icon: <ShieldCheck className="text-sky-400" />, text: "Proteção ativa contra manipulação de dados (IDOR)" },
-                { icon: <Building2 className="text-sky-400" />, text: "Isolamento completo entre diferentes franquias" },
-                { icon: <Lock className="text-sky-400" />, text: "Segurança de nível enterprise com Supabase" }
-              ].map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                  className="flex items-center gap-4 text-slate-200"
-                >
-                  <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
-                    {item.icon}
-                  </div>
-                  <span>{item.text}</span>
-                </motion.li>
-              ))}
+            <ul className="space-y-5">
+              {items.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.li
+                    key={item.text}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.12 }}
+                    className="flex items-center gap-4 text-slate-200"
+                  >
+                    <div className="p-2 bg-white/10 rounded-lg shrink-0">
+                      <Icon className="text-brand-sky" size={20} />
+                    </div>
+                    <span>{item.text}</span>
+                  </motion.li>
+                );
+              })}
             </ul>
           </motion.div>
 
@@ -55,32 +61,33 @@ export default function MultiTenant() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="glass-dark rounded-3xl p-8 border border-white/10 shadow-2xl relative z-10">
-              <div className="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-rose-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                </div>
-                <div className="text-xs text-slate-400 font-mono">tenant_id: ag_flow_001</div>
-              </div>
-
-              <div className="space-y-4">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="h-12 bg-white/5 rounded-xl flex items-center px-4 gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-sky-500/20 flex items-center justify-center">
-                      <Lock size={14} className="text-sky-400" />
+            <div className="grid gap-4">
+              {['Agência Horizonte', 'Viagens Mar Azul', 'Rota Sul Turismo'].map((agencia, i) => (
+                <div key={agencia} className="glass-dark rounded-2xl p-5 shadow-2xl">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-brand-sky/20 flex items-center justify-center">
+                        <Building2 size={18} className="text-brand-sky" />
+                      </div>
+                      <span className="font-semibold">{agencia}</span>
                     </div>
-                    <div className="h-2 w-1/3 bg-white/10 rounded-full"></div>
-                    <div className="h-2 w-1/4 bg-white/5 rounded-full ml-auto"></div>
+                    <Lock size={16} className="text-emerald-400" />
                   </div>
-                ))}
-              </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {['Reservas', 'Vendas', 'Clientes'].map((tabela) => (
+                      <div key={tabela} className="rounded-lg bg-white/5 px-3 py-2 text-[11px] text-slate-400">
+                        {tabela}
+                        <div className="h-1.5 mt-2 rounded-full bg-white/10">
+                          <div className="h-full rounded-full bg-brand-sky/60" style={{ width: `${40 + i * 20}%` }}></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-500/20 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-sky/20 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-blue/20 rounded-full blur-2xl"></div>
           </motion.div>
         </div>
       </div>

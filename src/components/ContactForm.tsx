@@ -34,7 +34,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contato" className="py-24 bg-aviation-blue relative overflow-hidden">
+    <section id="contato" className="py-24 bg-brand-deep relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
 
@@ -42,10 +42,10 @@ export default function ContactForm() {
         <div className="glass-dark rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">
-              Pronto para a decolagem?
+              Pronto para colocar sua agência no fluxo?
             </h2>
             <p className="text-sky-200">
-              Solicite uma demonstração e descubra como otimizar a gestão da sua agência.
+              Solicite uma demonstração do Flowtur e veja como centralizar a operação da sua agência.
             </p>
           </div>
 
@@ -58,8 +58,8 @@ export default function ContactForm() {
               <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-10 h-10 text-emerald-400" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Plano de voo recebido!</h3>
-              <p className="text-sky-200">Nossa tripulação entrará em contato em breve.</p>
+              <h3 className="text-2xl font-bold text-white mb-2">Solicitação recebida!</h3>
+              <p className="text-sky-200">Nossa equipe entrará em contato em breve para agendar a demonstração.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -71,7 +71,7 @@ export default function ContactForm() {
                     name="nome"
                     required
                     type="text"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-sky transition-all"
                     placeholder="Seu nome"
                   />
                 </div>
@@ -82,7 +82,7 @@ export default function ContactForm() {
                     name="agencia"
                     required
                     type="text"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-sky transition-all"
                     placeholder="Sua agência"
                   />
                 </div>
@@ -95,7 +95,7 @@ export default function ContactForm() {
                     name="email"
                     required
                     type="email"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-sky transition-all"
                     placeholder="contato@agencia.com"
                   />
                 </div>
@@ -106,7 +106,7 @@ export default function ContactForm() {
                     name="telefone"
                     required
                     type="tel"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-sky transition-all"
                     placeholder="(00) 00000-0000"
                   />
                 </div>
@@ -117,7 +117,7 @@ export default function ContactForm() {
                   id="mensagem"
                   name="mensagem"
                   rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand-sky transition-all resize-none"
                   placeholder="Escreva sua mensagem aqui..."
                 ></textarea>
               </div>
@@ -126,13 +126,13 @@ export default function ContactForm() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={status === 'submitting'}
-                className="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:shadow-sky-500/25 transition-all disabled:opacity-70"
+                className="w-full bg-gradient-to-r from-brand-sky to-brand-blue text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:shadow-sky-500/25 transition-all disabled:opacity-70"
               >
                 {status === 'submitting' ? (
                   <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 ) : (
                   <>
-                    Decolar Plano<Send size={18} />
+                    Solicitar demonstração <Send size={18} />
                   </>
                 )}
               </motion.button>

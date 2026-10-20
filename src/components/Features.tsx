@@ -1,66 +1,135 @@
 import { motion } from 'motion/react';
-import { CalendarDays, Hotel, WalletCards } from 'lucide-react';
+import {
+  Luggage,
+  ShoppingCart,
+  FileText,
+  Hotel,
+  Plane,
+  Users,
+  ListTodo,
+  WalletCards,
+  CalendarDays,
+  Bell,
+} from 'lucide-react';
+
+const modules = [
+  {
+    icon: Luggage,
+    title: 'Reservas',
+    desc: 'Cadastro em etapas para pacotes, voos, hospedagens e cruzeiros, com vários hotéis e localizadores na mesma reserva e bloqueio de duplicidade.',
+    items: ['Status automático por data', 'Checklist operacional', 'E-mail ao hotel integrado'],
+  },
+  {
+    icon: ShoppingCart,
+    title: 'Vendas',
+    desc: 'Assistente de nova venda com resumo ao vivo, pagante e passageiros buscados na base de clientes e controle completo de pagamentos.',
+    items: ['Numeração sequencial', 'KPIs e filtros por período', 'Gera reserva a partir da venda'],
+  },
+  {
+    icon: FileText,
+    title: 'Cotações e Propostas',
+    desc: 'Cotações com várias opções de hotel, voo, bagagem, seguro e parcelamento, transformadas em proposta comercial para o cliente.',
+    items: ['Link público sem login', 'Preenchimento com IA', 'Calculadora de comissão'],
+  },
+  {
+    icon: Hotel,
+    title: 'Hotéis',
+    desc: 'Catálogo de hotéis com imagens, e-mails e telefones, cidade pelo IBGE e CEP preenchido automaticamente.',
+    items: ['Galeria de fotos', 'Gerador de e-mail ao hotel', 'Hóspedes preenchidos da reserva'],
+  },
+  {
+    icon: Plane,
+    title: 'Voos',
+    desc: 'Cadastro e consulta de voos com busca de aeroportos integrada, prontos para vincular às reservas.',
+    items: ['Busca de aeroportos', 'Vários localizadores', 'Passageiros por trecho'],
+  },
+  {
+    icon: Users,
+    title: 'Clientes',
+    desc: 'Base de clientes com busca inteligente (nome em qualquer ordem, sem acentos ou CPF) e verificação de CPF/CNPJ duplicado.',
+    items: ['Histórico de viagens', 'Total gasto por cliente', 'Cadastro rápido na venda'],
+  },
+  {
+    icon: ListTodo,
+    title: 'Tarefas',
+    desc: 'Tarefas internas com categoria, status, urgência, responsável, prazo e referência à cotação ou reserva.',
+    items: ['Urgência de Baixa a Crítica', 'Responsável da equipe', 'Status Aguardando terceiros'],
+  },
+  {
+    icon: WalletCards,
+    title: 'Créditos',
+    desc: 'Controle dos créditos de clientes gerados por viagens canceladas ou remarcadas, para que nenhum valor fique esquecido.',
+    items: ['Vinculados ao cliente', 'Visão centralizada', 'Junto às reservas'],
+  },
+  {
+    icon: CalendarDays,
+    title: 'Calendário de Embarques',
+    desc: 'A movimentação operacional dia a dia, com busca de passageiros e filtros, para a equipe saber exatamente quem embarca e quando.',
+    items: ['Visão diária', 'Busca de passageiros', 'Apartamentos em cards próprios'],
+  },
+  {
+    icon: Bell,
+    title: 'Notificações',
+    desc: 'Central em tempo real com os eventos da equipe e um resumo diário dos passageiros que embarcam no dia seguinte.',
+    items: ['Atualização em tempo real', 'Resumo de embarques', 'Por empresa'],
+  },
+];
 
 export default function Features() {
-  const features = [
-    {
-      icon: <CalendarDays className="w-10 h-10 text-sky-500" />,
-      title: "Calendário de Embarques",
-      desc: "Pipeline operacional completo. Acompanhe o passageiro desde a emissão de aéreos até o pós-viagem com checklists dinâmicos.",
-      color: "from-sky-500/20 to-transparent"
-    },
-    {
-      icon: <Hotel className="w-10 h-10 text-blue-500" />,
-      title: "Gestão de Hotéis",
-      desc: "Catálogo rico com múltiplas imagens, listagem flexível de contatos e envio de comunicados por e-mail direto do painel.",
-      color: "from-blue-500/20 to-transparent"
-    },
-    {
-      icon: <WalletCards className="w-10 h-10 text-emerald-500" />,
-      title: "Controle de Créditos",
-      desc: "Rastreio inteligente de créditos pendentes junto a cias aéreas e fornecedores. Maximize os resultados do seu caixa.",
-      color: "from-emerald-500/20 to-transparent"
-    }
-  ];
-
   return (
-    <section id="funcionalidades" className="py-24 bg-slate-50">
+    <section id="modulos" className="py-24 bg-brand-light">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-brand-blue font-semibold tracking-wider uppercase text-sm mb-4 block"
+          >
+            Módulos
+          </motion.span>
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-aviation-blue mb-6 font-display"
+            className="text-3xl md:text-5xl font-bold text-brand-navy mb-6"
           >
-            Seu <span className="text-sky-500">Plano de Voo</span> Perfeito
+            Tudo o que a agência precisa, <span className="text-gradient">integrado</span>
           </motion.h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Ferramentas desenhadas especificamente para a rotina de agências de viagens de alta performance.
+            Cada módulo conversa com os outros: a cotação vira venda, a venda gera a reserva e a reserva alimenta o calendário de embarques.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-              whileHover={{ y: -10 }}
-              className="glass bg-white/50 rounded-3xl p-8 relative overflow-hidden group cursor-pointer"
-            >
-              <div className={`absolute top-0 left-0 w-full h-32 bg-gradient-to-b ${feat.color} opacity-50 group-hover:opacity-100 transition-opacity`}></div>
-              <div className="relative z-10">
-                <div className="bg-white w-16 h-16 rounded-2xl shadow-sm flex items-center justify-center mb-6">
-                  {feat.icon}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {modules.map((mod, idx) => {
+            const Icon = mod.icon;
+            return (
+              <motion.div
+                key={mod.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (idx % 5) * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-shadow flex flex-col"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-sky/20 to-brand-blue/20 flex items-center justify-center mb-5">
+                  <Icon className="w-6 h-6 text-brand-blue" />
                 </div>
-                <h3 className="text-2xl font-bold text-aviation-blue mb-4">{feat.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{feat.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="text-lg font-bold text-brand-navy mb-3">{mod.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-5">{mod.desc}</p>
+                <ul className="mt-auto space-y-2">
+                  {mod.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-sky shrink-0"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

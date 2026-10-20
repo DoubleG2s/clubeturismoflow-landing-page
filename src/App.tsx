@@ -15,7 +15,7 @@ import Privacy from './pages/Privacy';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col font-sans selection:bg-sky-500/30">
+      <div className="min-h-screen flex flex-col font-sans selection:bg-brand-sky/30">
         <Navbar />
         
         {/* Camada das páginas roteáveis ocupa o resto do espaço caso vazio */}

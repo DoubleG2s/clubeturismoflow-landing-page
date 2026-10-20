@@ -1,5 +1,5 @@
 {
-  "name": "Clube Turismo Flow",
-  "description": "Landing page de alto impacto para o sistema de gestão multi-tenant Clube Turismo Flow, focada em converter donos de agências de viagens.",
+  "name": "Flowtur",
+  "description": "Site de apresentação do Flowtur, sistema SaaS multi-tenant de gestão operacional e comercial para agências de viagens.",
   "requestFramePermissions": []
 }

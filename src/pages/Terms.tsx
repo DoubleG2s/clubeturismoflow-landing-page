@@ -22,12 +22,12 @@ export default function Terms() {
           
           <div className="space-y-12 text-lg leading-relaxed">
             <p className="text-slate-300">
-              Bem-vindo ao Clube Turismo Flow. Ao utilizar nossa plataforma de gestão, sua agência concorda com os seguintes termos. Este documento rege a relação entre o licenciante (<span className="text-white font-medium">Clube Turismo Flow</span>) e o licenciado (<span className="text-white font-medium">Sua Agência</span>).
+              Bem-vindo ao Flowtur. Ao utilizar nossa plataforma de gestão, sua agência concorda com os seguintes termos. Este documento rege a relação entre o licenciante (<span className="text-white font-medium">Flowtur</span>) e o licenciado (<span className="text-white font-medium">Sua Agência</span>).
             </p>
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">1. Licenciamento do Software (O "Motor de Reservas")</h2>
-              <p className="mb-6">O Clube Turismo Flow concede uma licença de uso não exclusiva, temporária e revogável para a utilização de nossa plataforma SaaS. O sistema é projetado para otimizar o fluxo de trabalho de agências de viagens, permitindo a gestão de reservas, vouchers, créditos e calendários de embarque.</p>
+              <p className="mb-6">O Flowtur concede uma licença de uso não exclusiva, temporária e revogável para a utilização de nossa plataforma SaaS. O sistema é projetado para otimizar o fluxo de trabalho de agências de viagens, permitindo a gestão de reservas, vouchers, créditos e calendários de embarque.</p>
               
               <ul className="space-y-4">
                 <li className="flex gap-4">
@@ -36,7 +36,7 @@ export default function Terms() {
                 </li>
                 <li className="flex gap-4">
                   <div className="mt-2 w-2 h-2 rounded-full bg-sky-500 shrink-0"></div>
-                  <div><strong className="text-sky-400">Propriedade Intelectual:</strong> Todo o código, design e lógica do sistema são de propriedade exclusiva do Clube Turismo Flow.</div>
+                  <div><strong className="text-sky-400">Propriedade Intelectual:</strong> Todo o código, design e lógica do sistema são de propriedade exclusiva do Flowtur.</div>
                 </li>
               </ul>
             </section>
@@ -47,7 +47,7 @@ export default function Terms() {
               
               <ul className="space-y-4 text-slate-400 border-l border-sky-500/30 pl-6">
                 <li><span className="text-sky-400 font-bold">Garantia de Isolamento &raquo;</span> Asseguramos, através da tecnologia Row Level Security (RLS), que os dados de vendas, clientes e movimentações financeiras de uma agência são tecnicamente inacessíveis para qualquer outra agência ou franqueado cadastrado no sistema.</li>
-                <li><span className="text-sky-400 font-bold">Sigilo Comercial &raquo;</span> O Clube Turismo Flow não acessa seus dados estratégicos para fins de concorrência ou cruzamento de informações de mercado.</li>
+                <li><span className="text-sky-400 font-bold">Sigilo Comercial &raquo;</span> O Flowtur não acessa seus dados estratégicos para fins de concorrência ou cruzamento de informações de mercado.</li>
               </ul>
             </section>
 
@@ -90,7 +90,7 @@ export default function Terms() {
             <section className="bg-sky-950/30 border border-sky-500/20 p-8 rounded-3xl mt-8">
               <h2 className="text-xl font-bold text-white mb-4 tracking-tight">5. Atualizações do Sistema</h2>
               <p className="text-slate-300">
-                O Clube Turismo Flow reserva-se o direito de implementar melhorias, novas funcionalidades e correções de segurança periodicamente. Estes Termos de Uso podem ser atualizados para refletir novas funcionalidades do motor de reservas, sendo a versão mais recente sempre a válida.
+                O Flowtur reserva-se o direito de implementar melhorias, novas funcionalidades e correções de segurança periodicamente. Estes Termos de Uso podem ser atualizados para refletir novas funcionalidades do motor de reservas, sendo a versão mais recente sempre a válida.
               </p>
             </section>
           </div>

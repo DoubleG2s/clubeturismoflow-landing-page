@@ -22,7 +22,7 @@ export default function Privacy() {
 
           <div className="space-y-12 text-lg leading-relaxed">
             <p className="text-slate-300">
-              Esta política descreve como o Clube Turismo Flow coleta, armazena e protege os dados da sua agência e de seus clientes, garantindo total conformidade com a <span className="text-white font-medium">Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</span>.
+              Esta política descreve como o Flowtur coleta, armazena e protege os dados da sua agência e de seus clientes, garantindo total conformidade com a <span className="text-white font-medium">Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</span>.
             </p>
 
             <section>
@@ -47,7 +47,7 @@ export default function Privacy() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">2. Segurança de "Hangar" (Isolamento Multi-tenant)</h2>
-              <p className="mb-6">Diferente de sistemas legados, o Clube Turismo Flow utiliza uma arquitetura de nuvem moderna para garantir que seus segredos comerciais estejam protegidos:</p>
+              <p className="mb-6">Diferente de sistemas legados, o Flowtur utiliza uma arquitetura de nuvem moderna para garantir que seus segredos comerciais estejam protegidos:</p>
 
               <ul className="space-y-4 text-slate-400 border-l border-sky-500/30 pl-6">
                 <li><span className="text-sky-400 font-bold">Row Level Security (RLS) &raquo;</span> Implementamos uma camada de segurança no banco de dados que isola cada agência. Isso garante que a Agência A jamais consiga visualizar, mesmo por erro, os dados da Agência B.</li>
@@ -79,7 +79,7 @@ export default function Privacy() {
             <section className="bg-sky-950/30 border border-sky-500/20 p-8 rounded-3xl mt-8">
               <h2 className="text-xl font-bold text-white mb-4 tracking-tight">4. Responsabilidade no Tratamento</h2>
               <p className="text-slate-300">
-                O Clube Turismo Flow atua como Operador dos dados de seus passageiros, enquanto a sua Agência atua como Controladora.
+                O Flowtur atua como Operador dos dados de seus passageiros, enquanto a sua Agência atua como Controladora.
                 Comprometemo-nos a manter a infraestrutura estável e segura para que você possa atender seus clientes com tranquilidade.
               </p>
             </section>
